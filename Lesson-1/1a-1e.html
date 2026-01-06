@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Learn React</title>
+  </head>
+  <body>
+    <div class="js-container"></div>
+    <script src="https://unpkg.com/supersimpledev/react.js"></script>
+    <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
+    <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+    <script type="text/babel">
+        {/*solution for 1d. */}
+           const productCost = 10+2*8
+           console.log(productCost)
+      const div =
+        <div>
+        {/*setting up code*/}
+          <button>hello </button>
+          <p> this is the first text in react </p>
+
+          {/*solution for 1a. */}
+          <button>Good job!</button>
+
+          {/*solution for 1b. */}
+          <p>My name is Gowtham</p>
+
+          {/*solution for 1c. */}
+          <div>
+            <p>Cotton Socks</p>
+            <p>Price: $10</p>
+            <button>Add to Cart</button>
+
+          {/*solution for 1e.*/}
+          <p>Product cost: $${productCost}</p>
+          </div>
+        </div>
+      const container = document.querySelector('.js-container');
+      ReactDOM.createRoot(container).render(div);
+    </script>
+
+  </body>
+</html>

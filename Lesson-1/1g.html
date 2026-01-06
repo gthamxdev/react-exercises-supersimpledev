@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Learn React</title>
+</head>
+<body>
+  <div class="js-container"></div>
+  <script src="https://unpkg.com/supersimpledev/react.js"></script>
+  <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
+  <script src="https://unpkg.com/supersimpledev/dayjs.js"></script>
+
+  <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+  <script type="text/babel">
+      {/*solution for 1g. */}
+    const currentDate = dayjs().format('MMMM D');
+    const currentTime = dayjs().format('HH:mm:ss');
+    console.log(currentDate)
+
+    const div = 
+      <div>
+        {/*solution for 1h,1i */}
+        <p>Today is {currentDate}</p>
+        <p>Current time: {currentTime}</p>
+      </div>
+    const container = document.querySelector('.js-container')
+    ReactDOM.createRoot(container).render(div)
+  </script>
+</body>
+</html>
