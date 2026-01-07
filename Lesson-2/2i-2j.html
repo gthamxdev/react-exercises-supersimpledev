@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Learn React</title>
+</head>
+<body>
+  <div class="js-container"></div>
+  <script src="https://unpkg.com/supersimpledev/react.js"></script>
+  <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
+  <script src="https://unpkg.com/supersimpledev/dayjs.js"></script>
+
+  <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+  <script type="text/babel">
+    function ProductDetails({name,price,discountPrice,imgsrc}){
+      return (
+        <>  <img src={imgsrc} width = "100"/>
+            <p>{name}</p>
+            
+            {/* {!discountPrice && (
+              <p>price:${price}</p>
+             ) }
+            {discountPrice && (
+              <>
+              <p><del>price:${price}</del></p>
+              <p>Discount price:${discountPrice}</p>
+              </>
+            )
+
+            }*/}
+
+            {!discountPrice ? 
+               (
+              <p>price:${price}</p>
+             ) : (
+              <>
+              <p><del>price:${price}</del></p>
+              <p>Discount price:${discountPrice}</p>
+              </>
+             )
+            }
+            <button>Add to Cart</button>
+          
+        </>
+      )
+    }
+    function APP (){
+      return (
+        <>
+          <ProductDetails 
+          name ="Cotton socks" 
+          price ="10.90" 
+          imgsrc = "./images/cotton-socks.png"/>
+          <ProductDetails 
+          name ="Tenni balls"
+           price = "6.00" 
+           discountPrice = "10"
+           imgsrc = "./images/tennis-balls.png"/>
+          <ProductDetails 
+          name ="Plain T-Shirt" 
+          price = "7.99" 
+          discountPrice = "5.99"
+          imgsrc = "./images/plain-t-shirt.png"
+          />
+          <ProductDetails name = "Cricket Bat"  price ="100"/>
+        </>
+      )
+    }
+    
+    const container = document.querySelector('.js-container');
+    ReactDOM.createRoot(container).render(<APP/>)
+  </script>
+</body>
+</html>
